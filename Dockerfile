@@ -30,7 +30,7 @@ RUN \
     refreshenv ;\
     cmd.exe /c gem install octokit ;\
     cmd.exe /c "c:\ProgramData\chocolatey\bin\wget.exe --no-check-certificate https://bootstrap.pypa.io/get-pip.py" ;\
-    cmd.exe /c "c:\python36\python.exe get-pip.py" ;
+    cmd.exe /c "c:\Python36\python.exe get-pip.py" ;
     
 
 COPY scripts /scripts
