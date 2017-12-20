@@ -29,8 +29,8 @@ RUN \
     cmd.exe /c "c:\programdata\chocolatey\bin\cyg-get.bat expect mail bind-utils xinit xorg-docs" ;\
     refreshenv ;\
     cmd.exe /c gem install octokit ;\
-    cmd.exe /c "c:\ProgramData\chocolatey\bin\wget.exe https://bootstrap.pypa.io/get-pip.py" ;\
-    python get-pip.py ;\
+    cmd.exe /c "c:\ProgramData\chocolatey\bin\wget.exe --no-check-certificate https://bootstrap.pypa.io/get-pip.py" ;\
+    cmd.exe /c python get-pip.py ;
     
 
 COPY scripts /scripts
