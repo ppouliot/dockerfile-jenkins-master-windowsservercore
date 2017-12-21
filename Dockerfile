@@ -31,7 +31,7 @@ RUN \
     cmd.exe /c "c:\ProgramData\chocolatey\bin\wget.exe --no-check-certificate https://bootstrap.pypa.io/get-pip.py" ;\
     cmd.exe /c "c:\Python36\python.exe get-pip.py" ; \
     refreshenv ;\
-    cmd.exe /c "c:\Python36\Scripts\pip.exe install PyGithub jenkins-job-builder jenkins-job-wrecker" ;
+    cmd.exe /c "c:\Python36\Scripts\pip.exe install PyGithub jenkins-job-builder" ;
     
 
 COPY bin /bin
