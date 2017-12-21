@@ -29,6 +29,7 @@ credentials-binding
 credentials
 display-url-api
 docker-commons
+docker-plugin
 docker-workflow
 durable-task
 emma
@@ -36,6 +37,7 @@ external-monitor-job
 favorite
 git-client
 git-server
+git-changelog
 git
 github-api
 github-branch-source
@@ -72,6 +74,8 @@ pipeline-stage-view
 plain-credentials
 powershell
 pubsub-light
+ruby
+ruby-runtime
 resource-disposer
 scm-api
 script-security
