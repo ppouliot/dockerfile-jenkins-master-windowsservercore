@@ -6,7 +6,6 @@ SHELL ["powershell", "-NoProfile", "-Command", "$ErrorActionPreference = 'Stop';
 
 # Note: Install Jenkins slave
 RUN \
-    # TODO: refactor with docker ENV after 1.4 release. 
     # jenkins version being bundled in this docker image
     if (-not($env:JENKINS_VERSION)) { $env:JENKINS_VERSION = '2.89.2'; \
         [Environment]::SetEnvironmentVariable('JENKINS_VERSION', $env:JENKINS_VERSION, 'Machine') }; \
@@ -24,13 +23,15 @@ RUN \
     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 RUN \
     # Install Choco Package
-    choco install openssh git wget curl rsync unzip winrar dotnet4.6.2 python3 ruby nodejs cygwin cyg-get sysinternals -Y ; \
+    choco install openssh git wget curl docker docker-compose docker-machine rsync unzip winrar dotnet4.6.2 python3 ruby nodejs cygwin cyg-get sysinternals -Y ; \
     refreshenv ;\
     cmd.exe /c "c:\programdata\chocolatey\bin\cyg-get.bat expect mail bind-utils xinit xorg-docs" ;\
     refreshenv ;\
     cmd.exe /c "c:\tools\ruby24\bin\gem install octokit" ;\
     cmd.exe /c "c:\ProgramData\chocolatey\bin\wget.exe --no-check-certificate https://bootstrap.pypa.io/get-pip.py" ;\
-    cmd.exe /c "c:\Python36\python.exe get-pip.py" ;
+    cmd.exe /c "c:\Python36\python.exe get-pip.py" ; \
+    refreshenv ;\
+    cmd.exe /c pip install PyGithub ;
     
 
 COPY scripts /scripts
