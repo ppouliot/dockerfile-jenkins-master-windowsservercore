@@ -27,11 +27,11 @@ RUN \
     refreshenv ;\
     cmd.exe /c "c:\programdata\chocolatey\bin\cyg-get.bat expect mail bind-utils xinit xorg-docs" ;\
     refreshenv ;\
-    cmd.exe /c "c:\tools\ruby24\bin\gem install octokit" ;\
+    cmd.exe /c "c:\tools\ruby24\bin\gem install octokit r10k hiera-eyaml" ;\
     cmd.exe /c "c:\ProgramData\chocolatey\bin\wget.exe --no-check-certificate https://bootstrap.pypa.io/get-pip.py" ;\
     cmd.exe /c "c:\Python36\python.exe get-pip.py" ; \
     refreshenv ;\
-    cmd.exe /c pip install PyGithub ;
+    cmd.exe /c "c:\Python36\Scripts\pip.exe install PyGithub" ; \
     
 
 COPY scripts /scripts
