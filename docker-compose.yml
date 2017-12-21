@@ -1,0 +1,10 @@
+version: '3'
+services:
+  jenkins_master:
+    image: ppouliot/jenkins-master-windowservercore
+    build: .
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - "c:/jenkins:c:/jenkins"
