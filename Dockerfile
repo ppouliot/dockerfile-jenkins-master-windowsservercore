@@ -31,10 +31,10 @@ RUN \
     cmd.exe /c "c:\ProgramData\chocolatey\bin\wget.exe --no-check-certificate https://bootstrap.pypa.io/get-pip.py" ;\
     cmd.exe /c "c:\Python36\python.exe get-pip.py" ; \
     refreshenv ;\
-    cmd.exe /c "c:\Python36\Scripts\pip.exe install PyGithub" ; \
+    cmd.exe /c "c:\Python36\Scripts\pip.exe install PyGithub jenkins-job-builder jenkins-job-wrecker" ;
     
 
-COPY scripts /scripts
+COPY bin /bin
 
 # for main web interface:
 EXPOSE 8080
@@ -42,4 +42,4 @@ EXPOSE 8080
 # will be used by attached slave agents:
 EXPOSE 50000
 
-CMD [ "powershell", "c:/scripts/startup.ps1" ]
+CMD [ "powershell", "c:/bin/startup.ps1" ]
