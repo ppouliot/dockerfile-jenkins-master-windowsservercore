@@ -1,7 +1,7 @@
 version: '3'
 services:
   jenkins_master:
-    image: ppouliot/jenkins-master-windowservercore
+    image: ppouliot/jenkins-master-windowsservercore
     build: .
     ports:
       - "8080:8080"
