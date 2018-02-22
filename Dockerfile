@@ -7,7 +7,7 @@ SHELL ["powershell", "-NoProfile", "-Command", "$ErrorActionPreference = 'Stop';
 # Note: Install Jenkins slave
 RUN \
     # jenkins version being bundled in this docker image
-    if (-not($env:JENKINS_VERSION)) { $env:JENKINS_VERSION = '2.89.3'; \
+    if (-not($env:JENKINS_VERSION)) { $env:JENKINS_VERSION = '2.89.4'; \
         [Environment]::SetEnvironmentVariable('JENKINS_VERSION', $env:JENKINS_VERSION, 'Machine') }; \
     if (-not($env:JENKINS_HOME)) { $env:JENKINS_HOME = 'c:/jenkins'; \
         [Environment]::SetEnvironmentVariable('JENKINS_HOME', $env:JENKINS_HOME, 'Machine') }; \
