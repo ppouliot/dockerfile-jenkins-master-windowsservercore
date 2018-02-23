@@ -1,4 +1,4 @@
-FROM openjdk:windowsservercore
+FROM openjdk:9-windowsservercore
 MAINTAINER peter@pouliot.net
 
 # $ProgressPreference will disable download progress info and speed-up download
